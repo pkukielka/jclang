@@ -1,7 +1,9 @@
 package clang;
+
 import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
+
 /**
  * \brief Provides the contents of a file that has not yet been saved to disk.<br>
  * * Each CXUnsavedFile instance provides the name of a file on the<br>
@@ -13,45 +15,50 @@ import com.sun.jna.Structure;
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> , <a href="http://rococoa.dev.java.net/">Rococoa</a>, or <a href="http://jna.dev.java.net/">JNA</a>.
  */
 public class CXUnsavedFile extends Structure {
-	/**
-	 * \brief The file whose contents have not yet been saved.<br>
-	 * * This file must already exist in the file system.<br>
-	 * C type : const char*
-	 */
-	public Pointer Filename;
-	/**
-	 * \brief A buffer containing the unsaved contents of this file.<br>
-	 * C type : const char*
-	 */
-	public Pointer Contents;
-	/// \brief The length of the unsaved contents of this buffer.
-	public NativeLong Length;
-	public CXUnsavedFile() {
-		super();
-		initFieldOrder();
-	}
-	protected void initFieldOrder() {
-		setFieldOrder(new String[]{"Filename", "Contents", "Length"});
-	}
-	/**
-	 * @param Filename \brief The file whose contents have not yet been saved.<br>
-	 * * This file must already exist in the file system.<br>
-	 * C type : const char*<br>
-	 * @param Contents \brief A buffer containing the unsaved contents of this file.<br>
-	 * C type : const char*<br>
-	 * @param Length \brief The length of the unsaved contents of this buffer.
-	 */
-	public CXUnsavedFile(Pointer Filename, Pointer Contents, NativeLong Length) {
-		super();
-		this.Filename = Filename;
-		this.Contents = Contents;
-		this.Length = Length;
-		initFieldOrder();
-	}
-	public static class ByReference extends CXUnsavedFile implements Structure.ByReference {
-		
-	};
-	public static class ByValue extends CXUnsavedFile implements Structure.ByValue {
-		
-	};
+    /**
+     * \brief The file whose contents have not yet been saved.<br>
+     * * This file must already exist in the file system.<br>
+     * C type : const char*
+     */
+    public Pointer Filename;
+    /**
+     * \brief A buffer containing the unsaved contents of this file.<br>
+     * C type : const char*
+     */
+    public Pointer Contents;
+    /// \brief The length of the unsaved contents of this buffer.
+    public NativeLong Length;
+
+    public CXUnsavedFile() {
+        super();
+        initFieldOrder();
+    }
+
+    protected void initFieldOrder() {
+        setFieldOrder(new String[]{"Filename", "Contents", "Length"});
+    }
+
+    /**
+     * @param Filename \brief The file whose contents have not yet been saved.<br>
+     *                 * This file must already exist in the file system.<br>
+     *                 C type : const char*<br>
+     * @param Contents \brief A buffer containing the unsaved contents of this file.<br>
+     *                 C type : const char*<br>
+     * @param Length   \brief The length of the unsaved contents of this buffer.
+     */
+    public CXUnsavedFile(Pointer Filename, Pointer Contents, NativeLong Length) {
+        super();
+        this.Filename = Filename;
+        this.Contents = Contents;
+        this.Length = Length;
+        initFieldOrder();
+    }
+
+    public static class ByReference extends CXUnsavedFile implements Structure.ByReference {
+
+    }
+
+    public static class ByValue extends CXUnsavedFile implements Structure.ByValue {
+
+    }
 }
