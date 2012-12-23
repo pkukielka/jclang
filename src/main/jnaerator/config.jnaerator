@@ -1,0 +1,9 @@
+-library Clang
+-nocpp
+-runtime JNA
+-Isrc/main/c/clang-c
+-I/usr/include
+src/main/c/clang-c/Platform.h
+src/main/c/clang-c/CXString.h
+src/main/c/clang-c/Index.h
+src/main/c/clang-c/CXCompilationDatabase.h
