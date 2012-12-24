@@ -1,9 +1,13 @@
 -library Clang
--nocpp
 -runtime JNA
--Isrc/main/c/clang-c
--I/usr/include
+
+-I/usr/lib/gcc/x86_64-linux-gnu/4.6/include/
+-I/usr/include/c++/4.6/x86_64-linux-gnu/
+-I/usr/include/x86_64-linux-gnu/
+-I/usr/include/linux/
+-Isrc/main/c/clang-c/
+
 src/main/c/clang-c/Platform.h
 src/main/c/clang-c/CXString.h
 src/main/c/clang-c/Index.h
-src/main/c/clang-c/CXCompilationDatabase.h
+
